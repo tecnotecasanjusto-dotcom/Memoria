@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Cine</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="start-screen" id="startScreen">
+      <div class="start-card">
+        <div class="art-pattern" aria-hidden="true">
+          <span class="block cyan"></span>
+          <span class="block lime"></span>
+          <span class="block orange"></span>
+          <span class="block pink"></span>
+          <span class="block gold"></span>
+          <span class="block blue"></span>
+        </div>
+
+        <p class="eyebrow">Juego de memoria</p>
+        <h1>Memory Cine</h1>
+        <p class="subtitle">Encuentra las parejas de tus películas favoritas</p>
+
+        <div class="player-input-wrap">
+          <label for="playerName">Tu nombre</label>
+          <input id="playerName" type="text" maxlength="18" placeholder="Jugador" value="Jugador" />
+        </div>
+
+        <aside class="ranking-panel start-ranking" aria-live="polite">
+          <div class="ranking-header">
+            <h3>Ranking</h3>
+          </div>
+          <ol id="rankingListStart" class="ranking-list"></ol>
+        </aside>
+
+        <button id="startBtn" class="primary-btn" type="button">Iniciar juego</button>
+      </div>
+    </div>
+
+    <main class="game-shell hidden" id="gameShell">
+      <header class="topbar">
+        <div>
+          <p class="label">Memory Cine</p>
+          <h2>Encuentra las parejas</h2>
+        </div>
+
+        <div class="score-panel">
+          <div class="score-box">
+            <span>Puntos</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="moves-box">
+            <span>Intentos</span>
+            <strong id="moves">0</strong>
+          </div>
+          <div class="timer-box">
+            <span>Tiempo</span>
+            <strong id="timer">00:00</strong>
+          </div>
+          <button id="restartBtn" type="button" class="secondary-btn">Reiniciar</button>
+        </div>
+      </header>
+
+      <p id="message" class="message">Gira las cartas y encuentra los pares.</p>
+      <section id="board" class="board" aria-label="Tablero de memoria"></section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
