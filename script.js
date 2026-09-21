@@ -7,10 +7,12 @@ const timerElement = document.getElementById('timer');
 const messageElement = document.getElementById('message');
 const startBtn = document.getElementById('startBtn');
 const restartBtn = document.getElementById('restartBtn');
+const resetRankingBtn = document.getElementById('resetRankingBtn');
 const playerNameInput = document.getElementById('playerName');
 const rankingList = document.getElementById('rankingListStart');
 
 const rankingStorageKey = 'memory-cine-ranking';
+const rankingResetCode = 'Tecnoteca';
 const movieFiles = [
   'Anabel.jpg',
   'Avatar.jpg',
@@ -254,6 +256,24 @@ startBtn.addEventListener('click', () => {
   gameShell.classList.remove('hidden');
   playSound('flip');
   resetGame();
+});
+
+resetRankingBtn.addEventListener('click', () => {
+  const enteredCode = window.prompt('Introduce el código para reiniciar el ranking:');
+
+  if (enteredCode === null) return;
+
+  if (enteredCode.trim() !== rankingResetCode) {
+    window.alert('Código incorrecto. No se puede reiniciar el ranking.');
+    return;
+  }
+
+  const confirmed = window.confirm('¿Seguro que quieres borrar la tabla de puntuaciones?');
+  if (!confirmed) return;
+
+  localStorage.removeItem(rankingStorageKey);
+  renderRanking();
+  window.alert('Ranking reiniciado correctamente.');
 });
 
 restartBtn.addEventListener('click', () => {

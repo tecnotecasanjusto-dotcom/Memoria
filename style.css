@@ -125,7 +125,8 @@ h1 {
 }
 
 .primary-btn,
-.secondary-btn {
+.secondary-btn,
+.mini-btn {
   appearance: none;
   border: none;
   border-radius: 14px;
@@ -148,8 +149,26 @@ h1 {
   box-shadow: 0 16px 24px rgba(59, 109, 246, 0.3);
 }
 
+.mini-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin: 0 auto 12px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
 .primary-btn:hover,
-.secondary-btn:hover {
+.secondary-btn:hover,
+.mini-btn:hover {
   transform: translateY(-2px) scale(1.01);
   filter: brightness(1.04);
 }
